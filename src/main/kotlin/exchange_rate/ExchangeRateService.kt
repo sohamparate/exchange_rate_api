@@ -4,9 +4,9 @@ import io.micronaut.http.HttpRequest
 import io.micronaut.http.client.HttpClient
 import reactor.core.publisher.Mono
 
-val API_KEY = "649fef065808f519a808ffef"
+const val API_KEY = "649fef065808f519a808ffef"
 
-class ExchangeRateService(val httpClient: HttpClient): ExchangeRateServiceContract {
+class ExchangeRateService(private val httpClient: HttpClient): ExchangeRateServiceContract {
 
     override fun getConversionRate(from: Currency, to: Currency): Double {
         val url = "https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${from}/${to}"

@@ -3,7 +3,6 @@ package exchange_rate
 import io.micronaut.core.annotation.Introspected
 import io.micronaut.serde.annotation.Serdeable
 
-@Introspected
 @Serdeable
 data class ExchangeRateResponse(
     val base_code: String,
