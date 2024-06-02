@@ -1,7 +1,8 @@
 package exchange_rate
 
-class CurrencyExchangeService {
-    fun getExchangeRate(from: exchange_rate.Currency, to: exchange_rate.Currency): Double {
-        return 80.0
+class CurrencyExchangeService(private val exchangeRateService: ExchangeRateServiceContract) {
+    fun getConversionRate(from: Currency, to: Currency): Double {
+        val rate = exchangeRateService.getConversionRate(from, to)
+        return rate
     }
 }
