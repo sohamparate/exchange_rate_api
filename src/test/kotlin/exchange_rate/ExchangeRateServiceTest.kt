@@ -16,9 +16,10 @@ class ExchangeRateServiceTest {
 
     @Test
     fun `it should take get conversion rates for a currency`() {
-        val currency = Currency.INR
+        val from = Currency.INR
+        val to = Currency.USD
 
-        val request = HttpRequest.GET<ExchangeRateResponse>("https://v6.exchangerate-api.com/v6/649fef065808f519a808ffef/latest/${currency}")
+        val request = HttpRequest.GET<ExchangeRateResponse>("https://v6.exchangerate-api.com/v6/649fef065808f519a808ffef/pair/${from}/${to}")
         val response = httpClient.toBlocking().exchange(request, ExchangeRateResponse::class.java)
         val expectedResponseStatus = HttpStatus.OK
 
