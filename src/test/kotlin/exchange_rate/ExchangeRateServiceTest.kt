@@ -15,7 +15,7 @@ class ExchangeRateServiceTest {
     lateinit var httpClient: HttpClient
 
     @Test
-    fun `it should take get conversion rates for a currency`() {
+    fun `it should take get conversion rate for a pair of currency`() {
         val from = Currency.INR
         val to = Currency.USD
 
