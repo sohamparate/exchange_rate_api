@@ -26,6 +26,7 @@ dependencies {
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     testImplementation("io.micronaut:micronaut-http-client")
     implementation("io.projectreactor:reactor-core:3.6.6")
+    testImplementation("org.wiremock:wiremock:3.6.0")
 }
 
 
